@@ -6,7 +6,7 @@ print('Its a trap')
 print("umrechnen von dem Dezimalsystem zu einenm belibigen anderen System")
 print("")
 
-def operation():
+def operation():    # main operation of the converter
     basis, decZahl = eingabe()  # Aufrufen von "eingabe" und Erhalt von Rückgabewerten
     ueberrpruefen(basis, decZahl)  # Daten ueberpruefen
     liste = []
@@ -21,24 +21,24 @@ def operation():
     return liste  # "liste" als Rückgabewert
 
 
-def eingabe():
+def eingabe():    # input of the converter
     basis = int(input('Basis -> Zahlensystem (nur Ganzzahlen): '))  # input der Basis
     decZahl = int(input('Dezimalzahl (nur Ganzzahlen): '))  # input der dezimal Zahl
     return (basis, decZahl)
 
 
-def ueberrpruefen(basis, decZahl):  # wenn basis 1 oder 0 dann Programm beenden
+def ueberrpruefen(basis, decZahl):  # wenn basis 1 oder 0 dann ¯\_(ツ)_/¯ / verify the input 
     if basis <= 1 or decZahl < 0:
         print(Fore.RED + "¯\_(ツ)_/¯" + "\033[39m")
         run()
 
 
-def run():
+def run():       # run operation()
     while True:
         print(Fore.GREEN + str(" ".join(operation())) + "\033[39m")  # Ausgabe der "liste" wird durch join() der Klammern beraubt (" ". beschreibt das Trennungszeichen)
 
 
 try:
     run()
-except KeyboardInterrupt:
+except KeyboardInterrupt:    # if you press strg/ctrl + c then stop the programm
     exit()
